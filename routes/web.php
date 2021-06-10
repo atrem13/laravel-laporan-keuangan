@@ -15,6 +15,7 @@ Route::get('/auth/logout', 'LoginSetupController@logout')->name('logout');
 
 Route::resource('admin', 'AdminController');
 Route::get('/laporan_keuangan', 'LaporanKeuanganController@index')->name('laporan_keuangan.index');
+Route::get('/summary_keuangan', 'SummaryKeuanganController@index')->name('summary_keuangan.index');
 
 // Auth::routes();
 

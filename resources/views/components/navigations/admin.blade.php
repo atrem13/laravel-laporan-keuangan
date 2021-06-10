@@ -5,3 +5,10 @@
         </span>
     </a>
 </li>
+<li>
+    <a href="{{ route('summary_keuangan.index') }}" class="waves-effect"><i class="dripicons-graph-bar"></i>
+        <span>
+            Summary Keuangan
+        </span>
+    </a>
+</li>
