@@ -22,7 +22,7 @@
                     </div>
                     <div class="form-group">
                         <label>Date</label>
-                        <input type="year" name="tahun" class="form-control mx-3" value="{{ request()->tahun }}">
+                        <input type="date" name="tahun" class="form-control mx-3" value="{{ request()->tahun }}">
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary mr-2">Filter</button>

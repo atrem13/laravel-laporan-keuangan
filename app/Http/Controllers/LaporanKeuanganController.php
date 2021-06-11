@@ -16,12 +16,16 @@ class LaporanKeuanganController extends Controller
         $tahun =  $request->input('tahun');
         if($type!="" || $tahun!=""){
             // $data = LaporanKeuangan::simplePaginate(10);
-            $data = LaporanKeuangan::where('TYPE_NERACA', $type)->WhereYear('TANGGAL', $tahun)->orderBy('TANGGAL', 'DESC')->Paginate(12);
+            if($type == 'LABA-RUGI'){
+                $data = LaporanKeuangan::where('TYPE_NERACA', 'LABA')->orWhere('TYPE_NERACA', 'RUGI')->WhereDate('TANGGAL', $tahun)->Paginate(12);
+            }else{
+                $data = LaporanKeuangan::where('TYPE_NERACA', $type)->WhereDate('TANGGAL', $tahun)->Paginate(12);
+            }
             // $data = LaporanKeuangan::Paginate(12);
             $data->appends(['type' => $type, 'tanggal' => $tahun]);
         }
         else{
-            $data = LaporanKeuangan::orderBy('TANGGAL', 'DESC')->Paginate(10);
+            $data = LaporanKeuangan::Paginate(10);
             // $data = LaporanKeuangan::Paginate(10);
         }
         // return $data;

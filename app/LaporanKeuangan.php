@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class LaporanKeuangan extends Model
 {
-    public $table = "laporan_keuangans";
+    public $table = "laporan_penjualan";
 }
