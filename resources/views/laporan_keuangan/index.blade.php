@@ -17,6 +17,7 @@
                             <option value="">- Choose -</option>
                             <option value="AKTIVA" {{ request()->type == 'AKTIVA' ? 'selected' : ''}}>AKTIVA</option>
                             <option value="LABA-RUGI" {{ request()->type == 'LABA-RUGI' ? 'selected' : ''}}>LABA-RUGI</option>
+                            <option value="PASSIVA" {{ request()->type == 'PASSIVA' ? 'selected' : ''}}>PASSIVA</option>
                         </select>
                     </div>
                     <div class="form-group">

@@ -22,7 +22,7 @@ class LoginSetupController extends Controller
         if ( ! in_array($request->login_as, ['admin'])) return redirect()->back()->withInput()->with('error', 'What re u doin?');
         if (auth()->guard($request->login_as)->attempt($request->only('username', 'password'))) {
             if(auth()->guard('admin')->user()){
-                return redirect()->route('laporan_keuangan.index');
+                return redirect()->route('home.index');
             }
             // return redirect()->route('dasboard.index');
         } else {

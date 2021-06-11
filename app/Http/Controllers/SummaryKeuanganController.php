@@ -16,9 +16,10 @@ class SummaryKeuanganController extends Controller
         // return $data;
         // $type =  $request->input('type');
         $tahun =  $request->input('tahun');
+        // return $tahun;
         if($tahun!=""){
             // $data = SummaryKeuangan::simplePaginate(10);
-            $data = SummaryKeuangan::WhereYear('tahun', $tahun)->Paginate(12);
+            $data = SummaryKeuangan::Where('tahun', $tahun)->Paginate(12);
             $data->appends(['tanggal' => $tahun]);
         }
         else{
