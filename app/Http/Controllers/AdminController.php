@@ -10,9 +10,10 @@ use Yajra\DataTables\Facades\DataTables;
 
 class AdminController extends Controller
 {
-    // public function __construct() {
-    //     $this->middleware('IsAdmin');
-    // }
+    public function __construct()
+    {
+        $this->middleware('IsLogin');
+    }
 
     public function index(Request $request) {
         if ($request->ajax()) {
@@ -96,7 +97,7 @@ class AdminController extends Controller
                 $admin->update($request->except(['password']));
             }
             DB::commit();
-            return redirect()->route('admin.index')->with(['msg' => ['type' => 'success', 'msg' => 'Data ' . $admin->name . ' Updated Successfully']]);
+            return redirect()->back()->with(['msg' => ['type' => 'success', 'msg' => 'Data ' . $admin->name . ' Updated Successfully']]);
         }catch(Exception $ex){
             DB::rollback();
             return redirect()->back()->with(['msg' => ['type' => 'danger', 'msg' => 'Error occurs']]);

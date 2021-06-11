@@ -15,6 +15,9 @@
         <link href="{{ asset('assets/css/icons.css') }}" rel="stylesheet" type="text/css">
 
         <link href="{{ asset('assets/plugins/sweet-alert2/sweetalert2.css') }}" rel="stylesheet" type="text/css">
+        {{--  <!-- Font Awesome -->  --}}
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
 
         <link href="{{ asset('assets/plugins/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('assets/plugins/datatables/responsive.bootstrap4.min.css') }}" rel="stylesheet" type="text/css">
@@ -50,7 +53,7 @@
                 <div class="sidebar-inner slimscrollleft">
                     <div id="sidebar-menu">
                         <ul>
-                            <li class="menu-title">Main</li>
+                            <li class="menu-title">Menu</li>
                             @auth('admin')
                                 @include('components.navigations.admin')
                             @endauth
@@ -69,7 +72,7 @@
                     <div class="topbar">
                         <div class="topbar-left d-none d-lg-block">
                             <div class="text-center text-white">
-                                <h6 class="pt-2">Laporan Keuangan</h6>
+                                <img src="{{ url('/assets/images/logo/logo.png') }}" alt="" style="height:60px;">
                             </div>
                         </div>
                         <nav class="navbar-custom">
@@ -91,9 +94,7 @@
                             </ul>
                             <ul class="list-inline menu-left mb-0">
                                 <li class="list-inline-item notification-list d-none d-sm-inline-block">
-                                    @auth('admin')
-                                        <a href="#" class="nav-link waves-effect">Admin</a>
-                                    @endauth
+                                    <a href="#" class="nav-link waves-effect">Aplikasi Laporan Keuangan dan penjualan</a>
                                 </li>
                             </ul>
                         </nav>

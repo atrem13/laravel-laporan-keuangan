@@ -6,11 +6,20 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimal-ui">
 
-        <title>Covid Test</title>
+        <title>Lapora Keuangan</title>
 
         <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('assets/css/icons.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" type="text/css">
+        <style>
+            body{
+                background-image: url('/assets/images/bg/bg.jpeg');
+                background-size: cover;
+                background-attachment: fixed;
+                min-height: 1200px;
+                width: 100%;
+            }
+        </style>
     </head>
 
 
@@ -30,55 +39,51 @@
         </div>
 
         <!-- Begin page -->
-
-        <div class="account-pages">
-
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-8 offset-md-2">
-                        <div class="card mb-0">
-                            <div class="card-body">
-                                <div class="p-2 text-center">
-                                    <h4 class="text-muted mt-4">Login</h4>
-                                </div>
-
-                                <div class="p-2">
-                                    @if (session('error'))
-                                        <div class="alert alert-danger text-dark">
-                                            {{ session('error') }}
-                                        </div>
-                                    @endif
-                                    <form class="form-horizontal m-t-20" action="{{ route('filter_login') }}" method="post">
-                                        @csrf
-                                        <div class="form-group">
-                                            <input class="form-control" type="text"  required="" placeholder="Username" name="username">
-                                            <input type="hidden" name="login_as" value="admin">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <input class="form-control" type="password" required="" placeholder="Password" name="password" id="password">
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="mybutton" onclick="change()"> <label class="custom-control-label pt-1" for="mybutton">Lihat Password</label>
-                                            </div>
-                                        </div>
-
-
-                                        <div class="form-group text-center row m-t-20">
-                                            <div class="col-12">
-                                                <button class="btn btn-primary btn-block waves-effect waves-light" type="submit">Log In</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-
+        <div class="container" style="padding-top:15%;">
+            <div class="row align-items-center">
+                <div class="col-md-8 offset-md-2">
+                    <div class="card mb-0">
+                        <div class="card-body">
+                            <div class="p-2 text-center">
+                                <h4 class="text-muted mt-4">Login</h4>
                             </div>
+
+                            <div class="p-2">
+                                @if (session('error'))
+                                    <div class="alert alert-danger text-dark">
+                                        {{ session('error') }}
+                                    </div>
+                                @endif
+                                <form class="form-horizontal m-t-20" action="{{ route('filter_login') }}" method="post">
+                                    @csrf
+                                    <div class="form-group">
+                                        <input class="form-control" type="text"  required="" placeholder="Username" name="username">
+                                        <input type="hidden" name="login_as" value="admin">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input class="form-control" type="password" required="" placeholder="Password" name="password" id="password">
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="mybutton" onclick="change()"> <label class="custom-control-label pt-1" for="mybutton">Lihat Password</label>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group text-center row m-t-20">
+                                        <div class="col-12">
+                                            <button class="btn btn-primary btn-block waves-effect waves-light" type="submit">Log In</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
                         </div>
                     </div>
                 </div>
-                <!-- end row -->
             </div>
+            <!-- end row -->
         </div>
 
 

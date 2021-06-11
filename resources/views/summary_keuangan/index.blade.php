@@ -1,7 +1,7 @@
 @extends('template.main')
 
 @section('main-title')
-    Laporan Keuangan
+    Laporan Penjualan
 @endsection
 
 @section('body')

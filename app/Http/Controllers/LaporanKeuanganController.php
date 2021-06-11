@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class LaporanKeuanganController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('IsLogin');
+    }
     public function index(Request $request) {
         $type =  $request->input('type');
         $tahun =  $request->input('tahun');
